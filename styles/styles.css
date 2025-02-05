@@ -1,0 +1,185 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    padding: 0 20px;
+    background-image: linear-gradient(135deg, #3a7d44, #95e1a8);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Main Container */
+.main-container {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    padding: 4rem 2.5rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 35px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 1;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* Logo */
+.logo {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #ff6f61;
+    background: linear-gradient(45deg, #ff9f6b, #ff6f61);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 3px;
+    margin-bottom: 2.5rem;
+}
+
+/* Heading */
+.heading {
+    font-size: 2.8rem;
+    color: #2f4f4f;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out 0.5s forwards;
+}
+
+/* Description */
+.description {
+    font-size: 1.4rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out 1s forwards;
+}
+
+/* Call to Action Buttons */
+.cta-button {
+    display: inline-block;
+    background: #2f4f4f;
+    color: white;
+    padding: 1.2rem 3rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin: 1rem 0; /* Added space between buttons */
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out 1.3s forwards;
+}
+
+.cta-button:hover {
+    background: #ff9f6b;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+/* QR Code Section */
+.qr-section {
+    margin-top: 4rem;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out 1.5s forwards;
+}
+
+.qr-section h3 {
+    font-size: 1.6rem;
+    color: #2f4f4f;
+    margin-bottom: 1rem;
+}
+
+.qr-code {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.qr-code img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.qr-code img:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+.footer {
+    font-size: 1rem;
+    color: #aaa;
+    margin-top: 3rem;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out 1.8s forwards;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .logo {
+        font-size: 3.5rem;
+    }
+
+    .heading {
+        font-size: 2.2rem;
+    }
+
+    .cta-button {
+        padding: 1rem 2.5rem;
+        font-size: 1.2rem;
+    }
+
+    .qr-code img {
+        max-width: 200px;
+    }
+}
