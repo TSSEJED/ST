@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LPM IN STEM - Science Hub</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="shortcut icon" href="assets/icons/icon.jpg" type="image/x-icon">
+    
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="logo-btn">LPM IN STEM</div>
+        <ul class="nav-links">
+            <li><a href="science.html" class="nav-link">Science</a></li>
+            <li><a href="tech.html" class="nav-link">Technology</a></li>
+            <li><a href="engenering.html" class="nav-link">Engineering</a></li>
+            <li><a href="math.html" class="nav-link">Mathematics</a></li>
+            
+            
+         
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Explore Scientific Wonders</h1>
+        <p>Dive into the world of STEM through curated educational content</p>
+    </header>
+
+    <main class="category-grid">
+        <section class="category-card" id="physics">
+            <div class="content">
+                <h2 class="h2">Science</h2>
+                <p>"Science is the great antidote to the poison of enthusiasm and superstition."</p>
+                <p> – Adam Smith</p>
+                <a href="science.html" class="cta">View Content</a>
+            </div>
+        </section>
+        <section class="category-card" id="space">
+            <div class="content">
+                <h2 class="h2">Technology</h2>
+                <h1>Content Coming Soon!</h1>
+                <p>We're working hard to prepare amazing educational materials for you.</p>
+            </div>
+                
+            </div>
+            <!-- Theme Toggle -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </div>
+        </section>
+        
+        <section class="category-card" id="biology">
+            <div class="content">
+                <h2 class="h2">Engineering</h2>
+                <h1>Content Coming Soon!</h1>
+                <p>We're working hard to prepare amazing educational materials for you.</p>
+            </div>
+                
+            </div>
+        </section>
+
+        <section class="category-card" class="coming-soon">
+            <div class="content">
+            <i class="fas fa-tools construction-icon"></i>
+            <h2 class="h2" >Mathematics</h2>
+            <h1>Content Coming Soon!</h1>
+            <p>We're working hard to prepare amazing educational materials for you.</p>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <script src="scripts/app.js"></script>
+    <script>
+                // Theme Toggle Function
+                function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+            const toggleBtn = document.querySelector('.theme-toggle i');
+            toggleBtn.classList.toggle('fa-moon');
+            toggleBtn.classList.toggle('fa-sun');
+        }
+
+        // Dynamic Hover Effects
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.style.color = '#64ffda';
+            });
+            link.addEventListener('mouseleave', () => {
+                link.style.color = '#ccd6f6';
+            });
+        });
+
+        // Logo Button Interaction
+        document.querySelector('.logo-btn').addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

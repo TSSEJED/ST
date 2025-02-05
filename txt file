@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LPM STEM Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #0a192f;
+            --secondary-dark: #172a45;
+            --accent-teal: #64ffda;
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--primary-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background var(--transition-speed);
+        }
+
+        /* Enhanced Navbar */
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: var(--secondary-dark);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo-btn {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-teal);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-btn::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-teal);
+            transition: width var(--transition-speed);
+        }
+
+        .logo-btn:hover::before {
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            position: relative;
+            transition: color var(--transition-speed);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-teal);
+            transition: width var(--transition-speed);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Coming Soon Page */
+        .coming-soon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .construction-icon {
+            font-size: 4rem;
+            color: var(--accent-teal);
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        /* Content Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 5%;
+        }
+
+        .subject-card {
+            background: var(--secondary-dark);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: transform var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(100, 255, 218, 0.1),
+                transparent
+            );
+            transition: left 0.6s;
+        }
+
+        .subject-card:hover::before {
+            left: 100%;
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--secondary-dark);
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="#" class="logo-btn">LPM STEM</a>
+        <ul class="nav-links">
+            <li><a href="science.html" class="nav-link">Science</a></li>
+            <li><a href="chemistry.html" class="nav-link">Chemistry</a></li>
+            <li><a href="biology.html" class="nav-link">Biology</a></li>
+            <li><a href="space.html" class="nav-link">Space</a></li>
+            <li><a href="bureau.html" class="nav-link">Team</a></li>
+        </ul>
+    </nav>
+
+    <!-- Chemistry/Biology Coming Soon Content -->
+    <section class="coming-soon">
+        <i class="fas fa-tools construction-icon"></i>
+        <h1>Content Coming Soon!</h1>
+        <p>We're working hard to prepare amazing educational materials for you.</p>
+    </section>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <script>
+        // Theme Toggle Function
+        function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+            const toggleBtn = document.querySelector('.theme-toggle i');
+            toggleBtn.classList.toggle('fa-moon');
+            toggleBtn.classList.toggle('fa-sun');
+        }
+
+        // Dynamic Hover Effects
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.style.color = '#64ffda';
+            });
+            link.addEventListener('mouseleave', () => {
+                link.style.color = '#ccd6f6';
+            });
+        });
+
+        // Logo Button Interaction
+        document.querySelector('.logo-btn').addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
