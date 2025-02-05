@@ -78,9 +78,17 @@ body {
 
 .cta {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
+    padding: 0.3rem 0.1rem;
     background: var(--accent-teal);
     color: var(--primary-blue);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.ctb{
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    color: var(--accent-teal);
     border-radius: 5px;
     text-decoration: none;
     font-weight: 600;

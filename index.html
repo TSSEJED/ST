@@ -3,201 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tunify LPM Club</title>
-    <link rel="shortcut icon" href="assets/icon.jpg" type="image/x-icon">
-    <style>
-        /* Global Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 0.5em;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-
-        /* Body */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #fff;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            padding: 0 20px;
-            background-image: linear-gradient(135deg, #801818, #1a0d0e);
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Main Container */
-        .main-container {
-            position: relative;
-            max-width: 800px;
-            width: 100%;
-            padding: 3.5rem 2rem;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 25px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            z-index: 1;
-            animation: fadeIn 1s ease-out forwards;
-        }
-
-        /* Logo */
-        .logo {
-            font-size: 4rem;
-            font-weight: 800;
-            color: #ff4757;
-            background: linear-gradient(45deg, #ff6b6b, #ff4757);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: 2px;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Heading */
-        .heading {
-            font-size: 2.5rem;
-            color: #333;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
-            opacity: 0;
-            animation: fadeIn 1s ease-out 0.3s forwards;
-        }
-
-        /* Description */
-        .description {
-            font-size: 1.2rem;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeIn 1s ease-out 0.5s forwards;
-        }
-
-        /* Call to Action Button */
-        .cta-button {
-            display: inline-block;
-            background: #292425;
-            color: white;
-            padding: 1rem 2.5rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-            border-radius: 40px;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: fadeIn 1s ease-out 0.7s forwards;
-        }
-
-        .cta-button:hover {
-            background: #ff6b6b;
-            transform: scale(1.05);
-        }
-
-        .cta-button:active {
-            transform: scale(1);
-        }
-
-        /* QR Code */
-        .qr-code {
-            margin-top: 3rem;
-            opacity: 0;
-            animation: fadeIn 1s ease-out 1s forwards;
-        }
-
-        .qr-code img {
-            max-width: 200px;
-            border-radius: 12px;
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Footer */
-        .footer {
-            font-size: 0.9rem;
-            color: #aaa;
-            margin-top: 2rem;
-            opacity: 0;
-            animation: fadeIn 1s ease-out 1.3s forwards;
-        }
-
-        /* Keyframe Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .main-container {
-                padding: 3rem 1.5rem;
-            }
-
-            .logo {
-                font-size: 3.2rem;
-            }
-
-            .heading {
-                font-size: 2rem;
-            }
-
-            .cta-button {
-                padding: 0.8rem 2.3rem;
-                font-size: 1.1rem;
-            }
-
-            .qr-code img {
-                max-width: 180px;
-            }
-        }
-    </style>
+    <title>LPM IN STEM - Science Hub</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="shortcut icon" href="assets/icons/icon.jpg" type="image/x-icon">
+    
 </head>
 <body>
+    <nav class="main-nav">
+        <div class="logo-btn">LPM IN STEM</div>
+        <ul class="nav-links">
+            <li><a href="science.html" class="nav-link">Science</a></li>
+            <li><a href="tech.html" class="nav-link">Technology</a></li>
+            <li><a href="engenering.html" class="nav-link">Engineering</a></li>
+            <li><a href="math.html" class="nav-link">Mathematics</a></li>
+            
+            
+         
+        </ul>
+    </nav>
 
-    <div class="main-container">
-        <h1 class="logo">Tunify</h1>
-        <h2 class="heading">Something Amazing Is Coming Soon!</h2>
-        <p class="description">
-            We're building a special platform just for you to discover the best of music. Get ready for an exciting launch!
-        </p>
-        <a href="register.html" class="cta-button">Be the First to Know</a>
-        <div> 
-            <a href="about.html" class="cta-button" style="margin: 5px;">Learn More</a>
-        </div>
-        <!-- Add this in the coming-soon section -->
+    <header class="hero">
+        <h1>Explore Scientific Wonders</h1>
+        <p>Dive into the world of STEM through curated educational content</p>
+    </header>
 
-
-        <!-- QR Code -->
-        <div class="qr-code">
-            <img src="assets/bit.ly_tunify_lpm_club.png" alt="Scan this QR code" />
-        </div>
-
-        <p class="footer">© 2025 Tunify LPM Club - All Rights Reserved</p>
+    <main class="category-grid">
+        <section class="category-card" id="physics">
+            <div class="content">
+                <h2 class="h2">Science</h2>
+                <p>"Science is the great antidote to the poison of enthusiasm and superstition."</p>
+                <p> – Adam Smith</p>
+                <a href="land.html" class="cta">View Content</a>
+            </div>
+        </section>
+        <section class="category-card" id="space">
+            <div class="content">
+                <h2 class="h2">Technology</h2>
+                <h1>Content Coming Soon!</h1>
+                <p>We're working hard to prepare amazing educational materials for you.</p>
+            </div>
+                
+            </div>
+            <!-- Theme Toggle -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
     </div>
+        </section>
+        
+        <section class="category-card" id="biology">
+            <div class="content">
+                <h2 class="h2">Engineering</h2>
+                <h1>Content Coming Soon!</h1>
+                <p>We're working hard to prepare amazing educational materials for you.</p>
+            </div>
+                
+            </div>
+        </section>
 
+        <section class="category-card" class="coming-soon">
+            <div class="content">
+            <i class="fas fa-tools construction-icon"></i>
+            <h2 class="h2" >Mathematics</h2>
+            <h1>Content Coming Soon!</h1>
+            <p>We're working hard to prepare amazing educational materials for you.</p>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <script src="scripts/app.js"></script>
+    <script>
+                // Theme Toggle Function
+                function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+            const toggleBtn = document.querySelector('.theme-toggle i');
+            toggleBtn.classList.toggle('fa-moon');
+            toggleBtn.classList.toggle('fa-sun');
+        }
+
+        // Dynamic Hover Effects
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.style.color = '#64ffda';
+            });
+            link.addEventListener('mouseleave', () => {
+                link.style.color = '#ccd6f6';
+            });
+        });
+
+        // Logo Button Interaction
+        document.querySelector('.logo-btn').addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    </script>
 </body>
 </html>
