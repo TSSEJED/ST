@@ -601,4 +601,61 @@ body {
   .hidden {
     top: -60px;
   }
-  
+  /* Entry Page */
+.entry-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--primary-blue);
+    color: var(--text-primary);
+    padding: 20px;
+}
+
+.entry-page h1 {
+    font-size: 3rem;
+    color: var(--accent-teal);
+    margin-bottom: 2rem;
+}
+
+.entry-page input {
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 2px solid var(--accent-teal);
+    margin-bottom: 2rem;
+    background-color: var(--primary-blue);
+    color: var(--text-primary);
+    width: 80%;
+    max-width: 400px;
+}
+
+.entry-page input:focus {
+    border-color: var(--accent-teal);
+    outline: none;
+}
+
+.entry-page button {
+    background: var(--accent-teal);
+    color: var(--primary-blue);
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 80%;
+    max-width: 400px;
+}
+
+.entry-page button:hover {
+    background: #50b8b0;
+}
+
+#error-message {
+    color: #ff4d4d;
+    font-size: 1rem;
+    display: none;
+    margin-top: 1rem;
+}

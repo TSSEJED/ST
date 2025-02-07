@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Entry</title>
+    <link rel="shortcut icon" href="assets/icons/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="entry-page">
+        <h1>Enter Meeting Code</h1>
+        <input type="text" id="meetingCode" placeholder="Enter Code" />
+        <button onclick="validateCode()">Enter</button>
+        <p id="error-message">Incorrect code. Please try again.</p>
+        <h1 class="h1">donc hedha just test lik eyy ya arij</h1>
+        <h1 class="h1">Hedha le mot de passe :</h1>
+        <h1 class="h1">123</h1>
+        
+    </div>
+
+    <script>
+        function validateCode() {
+            const code = document.getElementById('meetingCode').value;
+            const errorMessage = document.getElementById('error-message');
+            if (code === "123") {
+                window.location.href = "vido.html"; // Redirect to the meeting page
+            } else {
+                errorMessage.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
