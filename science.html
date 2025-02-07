@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Science - LPM IN STEM</title>
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="shortcut icon" href="assets/icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/mobile.css">
+    <link rel="shortcut icon" href="assets/icons/icon.png" type="image/x-icon">
 </head>
 <body>
     <nav class="main-nav">
@@ -20,7 +21,7 @@
 
 
         <!-- Blog Section -->
-        <h1 class="h2">Introduction to Science</h1>
+        <h1 id="typewriter" class="h2">Introduction to Science</h1>
 
         <article class="blog-post" style="text-align: center;">
             <h2>🔬✨ Aujourd’hui marque le début d’une révolution scientifique : l’ouverture de notre tout premier domaine entièrement dédié à la recherche, à l’innovation et à la découverte ! 🏛️💡</h2>
@@ -44,8 +45,44 @@
         <h1 class="h2" style="font-size: small;">Bechir Moussi : Prof SVT à lycée pilote Mannouba</h1>
         <h1 class="h2" style="font-size: small;">Nour Ben Amor : Cheffe Emission et Eléve à LPM</h1>
         <a href="https://open.spotify.com/episode/1jlHd7PjFJSuxyxtMCeXn7?si=c33965e09adf43f8" class="cta">Listen On spotify</a>
+        <a href="https://youtu.be/bG-ZFiOwYrQ" class="cta">Watch on YouTube</a>
+        <a href="https://dl03.yt-dl.click/tunnel?id=wK-SX8woF6DWCrVp13v5d&exp=1738846622223&sig=xK_Aq_oqEPX7Lqyap7Kla7ywpA_Gp9Fa-eH6jfa6gVU&sec=qyzClmtdvWMkWBsCdwYX8zoU7gyJHXnl8fYdDTiDNrY&iv=GLHvsdrdyclL6XQTI2U3SA" class="cta">Download Video (MP4)</a>
+        <a href="https://dl03.yt-dl.click/tunnel?id=wK-SX8woF6DWCrVp13v5d&exp=1738846622223&sig=xK_Aq_oqEPX7Lqyap7Kla7ywpA_Gp9Fa-eH6jfa6gVU&sec=qyzClmtdvWMkWBsCdwYX8zoU7gyJHXnl8fYdDTiDNrY&iv=GLHvsdrdyclL6XQTI2U3SA" class="cta">Download Video (MP3)</a>
 
         </article class="blog-post" style="text-align: center;">
+
+        <article class="blog-post" style="text-align: center;">
+            <h2>🌊 The journey into the depths begins! As we set sail⛵into the fascinating world of Marine Biology🐋, we’ll uncover the secrets of ocean🌊 life⛵, explore ecosystems teeming with diversity, and dive into the science behind our blue planet🌎. Stay tuned for an ocean of discoveries! 🐢🔬 #STEM #marinebiology</h2>
+            <img src="assets/images/WhatsApp Image 2025-02-06 at 23.26.23_358bfb2a.jpg" alt="Science Blog Image" class="blog-image">
+            <div class="blog-text">
+                <a href="https://www.instagram.com/p/DFvz4AKug9V/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="cta">Read More</a>
+            </div>
+        </article>
+        
     </main>
+    <button id="backToTop" onclick="scrollToTop()">🔝</button>
+    <script>
+        let lastScrollY = window.scrollY;
+
+window.addEventListener("scroll", () => {
+  let navbar = document.querySelector(".navbar");
+  if (window.scrollY > lastScrollY) {
+    navbar.classList.add("hidden"); // Hide navbar when scrolling down
+  } else {
+    navbar.classList.remove("hidden"); // Show navbar when scrolling up
+  }
+  lastScrollY = window.scrollY;
+});
+    const defaultTitle = document.title;
+
+    window.addEventListener("blur", () => {
+      document.title = "Come Back! 🚀";
+    });
+    
+    window.addEventListener("focus", () => {
+      document.title = defaultTitle;
+    });
+    
+    </script>
 </body>
 </html>

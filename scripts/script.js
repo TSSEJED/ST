@@ -1,66 +1,57 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Sample artist data
-    const artists = [
-        {
-            name: "Artist 1",
-            genre: "rap",
-            image: "assets/images/artist1.jpg",
-            videoId: "YOUTUBE_VIDEO_ID"
-        },
-        {
-            name: "Artist 2",
-            genre: "malouf",
-            image: "assets/images/artist2.jpg",
-            videoId: "YOUTUBE_VIDEO_ID"
-        }
-    ];
+const socket = io.connect('http://localhost:3000');
+const localVideo = document.getElementById('localVideo');
+const remoteVideo = document.getElementById('remoteVideo');
+const startButton = document.getElementById('startButton');
+const joinButton = document.getElementById('joinButton');
+const meetingIdInput = document.getElementById('meetingId');
 
-    const grid = document.querySelector('.artist-grid');
-    
-    // Populate artist grid
-    artists.forEach(artist => {
-        const card = document.createElement('div');
-        card.className = 'artist-card';
-        card.dataset.genre = artist.genre;
-        
-        card.innerHTML = `
-            <img src="${artist.image}" alt="${artist.name}">
-            <div class="artist-info">
-                <h3>${artist.name}</h3>
-                <p>${artist.genre.toUpperCase()}</p>
-                <div class="video-wrapper">
-                    <iframe width="100%" height="200" 
-                        src="https://www.youtube.com/embed/${artist.videoId}" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-        `;
-        
-        grid.appendChild(card);
-    });
+let localStream;
+let peerConnection;
 
-    // Filter functionality
-    document.querySelectorAll('.genre-filters button').forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all buttons
-            document.querySelectorAll('.genre-filters button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Add active class to clicked button
-            button.classList.add('active');
-            
-            const genre = button.dataset.genre;
-            const cards = document.querySelectorAll('.artist-card');
-            
-            cards.forEach(card => {
-                card.style.display = (genre === 'all' || card.dataset.genre === genre) 
-                    ? 'block' 
-                    : 'none';
-            });
-        });
-    });
+const config = {
+  iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+};
+
+startButton.onclick = startMeeting;
+joinButton.onclick = joinMeeting;
+
+async function startMeeting() {
+  localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+  localVideo.srcObject = localStream;
+  peerConnection = new RTCPeerConnection(config);
+  localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStream));
+
+  peerConnection.onicecandidate = (event) => {
+    if (event.candidate) {
+      socket.emit('signal', { candidate: event.candidate });
+    }
+  };
+
+  peerConnection.ontrack = (event) => {
+    remoteVideo.srcObject = event.streams[0];
+  };
+
+  const offer = await peerConnection.createOffer();
+  await peerConnection.setLocalDescription(offer);
+  socket.emit('signal', { sdp: peerConnection.localDescription });
+}
+
+function joinMeeting() {
+  const meetingId = meetingIdInput.value;
+  socket.emit('join', { meetingId });
+}
+
+socket.on('signal', async (data) => {
+  if (data.sdp) {
+    await peerConnection.setRemoteDescription(new RTCSessionDescription(data.sdp));
+    if (data.sdp.type === 'offer') {
+      const answer = await peerConnection.createAnswer();
+      await peerConnection.setLocalDescription(answer);
+      socket.emit('signal', { sdp: peerConnection.localDescription });
+    }
+  }
+  
+  if (data.candidate) {
+    await peerConnection.addIceCandidate(new RTCIceCandidate(data.candidate));
+  }
 });

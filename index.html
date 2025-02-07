@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LPM IN STEM - Science Hub</title>
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="shortcut icon" href="assets/icons/icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/mobile.css">
+    <link rel="shortcut icon" href="assets/icons/icon.png" type="image/x-icon">
     
 </head>
 <body>
@@ -16,6 +17,7 @@
             <li><a href="tech.html" class="nav-link">Technology</a></li>
             <li><a href="engenering.html" class="nav-link">Engineering</a></li>
             <li><a href="math.html" class="nav-link">Mathematics</a></li>
+            <li><a href="vido.html" class="nav-link"></a>Video Call Meeting</li>
             
             
          
@@ -23,24 +25,24 @@
     </nav>
 
     <header class="hero">
-        <h1>Explore Scientific Wonders</h1>
-        <p>Dive into the world of STEM through curated educational content</p>
+        <h1 id="typewriter">Explore Scientific Wonders</h1>
+        <p id="typewriter">Dive into the world of STEM through curated educational content</p>
     </header>
 
     <main class="category-grid">
         <section class="category-card" id="physics">
             <div class="content">
-                <h2 class="h2">Science</h2>
-                <p>"Science is the great antidote to the poison of enthusiasm and superstition."</p>
-                <p> – Adam Smith</p>
+                <h2 id="typewriter" class="h2">Science</h2>
+                <p id="typewriter">"Science is the great antidote to the poison of enthusiasm and superstition."</p>
+                <p id="typewriter"> – Adam Smith</p>
                 <a href="land.html" class="cta">View Content</a>
             </div>
         </section>
         <section class="category-card" id="space">
             <div class="content">
-                <h2 class="h2">Technology</h2>
-                <h1>Content Coming Soon!</h1>
-                <p>We're working hard to prepare amazing educational materials for you.</p>
+                <h2 id="typewriter" class="h2">Technology</h2>
+                <h1 id="typewriter">Content Coming Soon!</h1>
+                <p id="typewriter">We're working hard to prepare amazing educational materials for you.</p>
             </div>
                 
             </div>
@@ -52,9 +54,9 @@
         
         <section class="category-card" id="biology">
             <div class="content">
-                <h2 class="h2">Engineering</h2>
-                <h1>Content Coming Soon!</h1>
-                <p>We're working hard to prepare amazing educational materials for you.</p>
+                <h2 id="typewriter" class="h2">Engineering</h2>
+                <h1 id="typewriter">Content Coming Soon!</h1>
+                <p id="typewriter">We're working hard to prepare amazing educational materials for you.</p>
             </div>
                 
             </div>
@@ -63,15 +65,16 @@
         <section class="category-card" class="coming-soon">
             <div class="content">
             <i class="fas fa-tools construction-icon"></i>
-            <h2 class="h2" >Mathematics</h2>
-            <h1>Content Coming Soon!</h1>
-            <p>We're working hard to prepare amazing educational materials for you.</p>
+            <h2 id="typewriter" class="h2" >Mathematics</h2>
+            <h1 id="typewriter">Content Coming Soon!</h1>
+            <p id="typewriter">We're working hard to prepare amazing educational materials for you.</p>
             </div>
         </section>
 
 
 
     </main>
+    <button id="backToTop" onclick="scrollToTop()">🔝</button>
 
     <script src="scripts/app.js"></script>
     <script>
@@ -97,6 +100,17 @@
         document.querySelector('.logo-btn').addEventListener('click', () => {
             window.location.href = 'index.html';
         });
+        const defaultTitle = document.title;
+
+window.addEventListener("blur", () => {
+  document.title = "Come Back! 🚀";
+});
+
+window.addEventListener("focus", () => {
+  document.title = defaultTitle;
+});
+
     </script>
+    
 </body>
 </html>

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Science - LPM IN STEM</title>
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="shortcut icon" href="assets/icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/mobile.css">
+    <link rel="shortcut icon" href="assets/icons/icon.png" type="image/x-icon">
 </head>
 <body>
     <nav class="main-nav">
@@ -20,18 +21,31 @@
         <h1><strong>🚀 Science Categories :</strong></h1>
         <section class="category-card" id="space">
         <div class="content">
-            <h1>1️⃣ Science</h1>
+            <h1 id="typewriter">1️⃣ Science</h1>
             <h2>Discover the wonders of physics, chemistry, and biology! Learn about scientific principles, groundbreaking discoveries, and exciting experiments.</h2>
             <a href="science.html" class="cta">🧪 Explore Science</a>
         </div>
     </section>
     <section class="category-card" id="space" style="text-align: center;">
         <div class="content" style="text-align: center;">
-            <h1>2️⃣ Psychology</h1>
+            <h1 id="typewriter">2️⃣ Psychology</h1>
             <h2>Dive into the human mind! Learn about emotions, behavior, mental processes, and the science behind how we think and act.</h2>
             <a href="psy.html" class="cta">🧠 Discover Psychology</a>
         </div>
     </section>
 
     </main>
+    <button id="backToTop" onclick="scrollToTop()">🔝</button>
+    <script>
+        const defaultTitle = document.title;
+    
+        window.addEventListener("blur", () => {
+          document.title = "Come Back! 🚀";
+        });
+        
+        window.addEventListener("focus", () => {
+          document.title = defaultTitle;
+        });
+        
+            </script>
 </body>
