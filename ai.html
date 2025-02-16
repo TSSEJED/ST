@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Chatbot</title>
+  <link rel="stylesheet" href="styles/bot.css">
+</head>
+<body>
+  <div id="chat">
+    <div id="chat-box"></div>
+    <input type="text" id="user-input" placeholder="Ask me anything..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script>
+    async function sendMessage() {
+  const userInput = document.getElementById("user-input").value;
+  const chatBox = document.getElementById("chat-box");
+
+  // Show user message
+  chatBox.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
+  
+  const response = await fetch(apiUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages: [
+        { role: "system", content: "You are a helpful AI assistant." },
+        { role: "user", content: userInput }
+      ],
+    }),
+  });
+
+  const data = await response.json();
+  console.log(data);  // Log the response to debug
+  const aiResponse = data.choices[0].message.content;
+
+  // Show AI response
+  chatBox.innerHTML += `<p><strong>AI:</strong> ${aiResponse}</p>`;
+  document.getElementById("user-input").value = "";
+}
+
+  </script>
+</body>
+</html>
